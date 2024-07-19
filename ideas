@@ -1,0 +1,50 @@
+This is just some early pseudocode to be used to help shape the code that will perform the complexity analysis of Hive.
+
+types:
+  Ant
+  Beetle
+  Empty
+  Grasshopper
+  Ladybug
+  Mosquito
+  Pillbug
+  Queen
+  Spider
+
+Node: {
+  type: enum Types,
+  adjacent: {
+    north: Node,
+    ne: Node,
+    se: Node,
+    south: Node,
+    sw: Node,
+    nw: Node,
+    above: Node,
+    below: Node
+  },
+  integral: Boolean,
+  canBeMoved: Boolean,
+  canMove: Boolean
+}
+
+deck: [
+  Ant, Ant, Ant,
+  Beetle, Beetle,
+  Grasshopper, Grasshopper, Grasshopper,
+  Queen,
+  Spider, Spider,
+  Ladybug,
+  Mosquito,
+  Pillbug
+]
+
+state: {
+  black: library,
+  white: library,
+  player: white|black,
+  board: [Node],
+  ended: Boolean,
+  future: [state]
+}
+
